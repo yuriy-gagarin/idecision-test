@@ -42,7 +42,7 @@ object ExtendedIterator {
   // Iterator with a peek method
   // 
 
-  // NOTE: A similar class already exists in the standart library: `scala.collection.BufferedIterator`
+  // NOTE: A similar class already exists in the standard library: `scala.collection.BufferedIterator`
 
   trait PeekingIterator[A] extends Iterator[A] {
     def peek: Option[A]
