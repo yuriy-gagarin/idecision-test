@@ -13,6 +13,12 @@ import scala.collection.AbstractIterator
 
 object RetryFunction {
 
+  // Retry function
+  //
+
+  // Function accepts a `by name` value that has a possibility of throwing.
+  // It will reattempt evaluation of the value up to `maxAttempts` times in case of an exception.
+
   def retry[A](f: => A, maxAttempts: Int): A = {
     @tailrec def retryIter(attempts: Int): A = {
       Try(f) match {
@@ -42,7 +48,7 @@ object ExtendedIterator {
     def peek: Option[A]
   }
 
-  def peeking[A](it: Iterator[A]): PeekingIterator[A] = new Iterator[A] with PeekingIterator[A] {
+  def peeking[A](it: Iterator[A]): PeekingIterator[A] = new PeekingIterator[A] {
     private var peeked: Option[A] = None
 
     def hasNext: Boolean = peeked.isDefined || it.hasNext
