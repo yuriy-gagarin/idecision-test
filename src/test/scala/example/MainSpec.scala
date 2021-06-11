@@ -3,8 +3,8 @@ package example
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-class HelloSpec extends AnyFlatSpec with Matchers {
-  "Retry" should "_" in {
+class MainSpec extends AnyFlatSpec with Matchers {
+  "Retry function" should "_" in {
     
     def throws(calls: Int) = {
       var callNo = 0
